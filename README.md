@@ -1,4 +1,4 @@
-![Psyopball](psyopball.png)
+![Psyopball](./psyopball.png)
 
 Psyopball is a continuous distribution mechanism built around actual on-chain behavior, not slogans.
 
