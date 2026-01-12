@@ -1,31 +1,74 @@
-![Psyopball](./psyopball.png)
+![Psyopball](psyopball.png)
 
-Psyopball is a continuous distribution mechanism built around actual on-chain behavior, not slogans.
+# Psyopball
 
-Every cycle, the system evaluates current holders and filters for wallets holding at least a minimum threshold of tokens. From that eligible set, a fixed number of wallets are randomly selected and receive equal distributions. This process runs automatically at fixed intervals.
+Psyopball is a deterministic distribution mechanism built for psyop-driven, pumpfun-style tokens.
 
-There is no staking, no snapshots, no claim windows, and no manual selection. Eligibility is live and based only on balance at the time of execution. Selection is stateless, meaning previous rewards do not affect future selection. Each interval stands on its own.
+The system continuously monitors holder balances, enforces a minimum eligibility threshold, and executes recurring randomized reward selection without staking, snapshots, claim windows, or manual intervention.
 
-The goal is to convert ongoing system activity into consistent token flow back to holders without encouraging timing games or passive farming. Participation requires maintaining exposure, not clicking buttons or watching blocks.
+Psyopball is designed to convert ongoing on-chain behavior into proportional token flow back to committed holders.
 
-Psyopball is designed to be simple, transparent, and repeatable. It is not a promise of yield. It is a distribution rule set that anyone can verify and reason about.
+## Concept
 
-## Design Philosophy
+Traditional holder rewards rely on static snapshots or discretionary logic.
+Psyopball operates on a rolling state model.
 
-- Continuous eligibility
-- Stateless selection
-- No human intervention
-- Verifiable randomness
-- Simple rules
+At a fixed interval, the protocol:
+- Identifies all holders above a defined balance threshold
+- Randomly selects a fixed subset of eligible holders
+- Distributes rewards evenly among selected participants
+- Resets nothing and accumulates no advantage for timing
 
-## Logo
+This ensures participation is continuous rather than opportunistic.
 
-The project logo is located at:
+## Design Goals
 
-```
-psyopball.png
-```
+- No staking
+- No claim windows
+- No snapshots
+- No discretionary logic
+- Fully deterministic execution loop
+- Transparent selection process
+- Minimal surface area
+
+## Eligibility Model
+
+Eligibility is defined strictly by balance.
+
+Holders must maintain a minimum token balance to remain in the eligible set.
+Eligibility is recalculated continuously and does not rely on historical snapshots.
+
+## Selection Model
+
+At each interval, a pseudo-random selection process chooses a fixed number of eligible holders.
+
+Selection is stateless.
+Past selection does not influence future selection.
+Each interval is independent.
+
+## Distribution Model
+
+Rewards are distributed evenly across selected holders.
+No weighting.
+No compounding.
+No decay.
+
+## Interval Execution
+
+The system operates on a fixed schedule.
+Default interval is ten minutes.
+
+Intervals are deterministic and auditable.
+
+## Architecture Overview
+
+- State tracking layer
+- Eligibility filter
+- Random selection engine
+- Distribution executor
+- Interval scheduler
 
 ## Disclaimer
 
-This repository describes a distribution mechanism. It is not financial advice.
+This repository provides reference logic only.
+On-chain execution requires proper auditing and adaptation.
