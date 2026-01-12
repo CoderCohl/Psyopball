@@ -1,4 +1,4 @@
-![Psyopball](psyopball.png)
+![Psyopball](psyopball.png.png)
 
 # Psyopball
 
